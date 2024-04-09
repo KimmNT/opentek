@@ -1,0 +1,21 @@
+
+html{
+    font-size: 62.5%
+}
+
+.qrgene__container{
+    position: relative;
+    .qrgene__area{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .qrgene__icon{
+        position: absolute;
+        position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    }
+}

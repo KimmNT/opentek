@@ -1,0 +1,41 @@
+//COLORES
+$primary: #FF7E36;
+$secondary:#333A73;
+$light:#FFF;
+
+@font-face {
+    font-family: Robo;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: "Robo";
+}
+.home__container{
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color:$primary ;
+    .home__content{
+        max-width: 950px !important;
+        margin: 0 auto;
+        .product__list{
+            .product__item{
+            }
+            .product__name{
+
+            }
+            .product__price{
+
+            }
+            .product__checkout_btn{
+                .checkout__icon{
+                    
+                }
+            }
+        }
+    }
+}
