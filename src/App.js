@@ -3,6 +3,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AdsPage from "./components/AdsPage";
 import HomePage from "./components/HomePage";
 import QRCode from "./components/QRCodePage";
+import Testing from "./components/Product";
+import PaymentPage from "./components/PaymentPage";
+import CashPage from "./components/PAYMENT/CashPage";
+import BankingPage from "./components/PAYMENT/BankingPage";
+import GTCPage from "./components/PAYMENT/GTCPage";
+import TransSuccess from "./components/TransSuccess";
+import TransFail from "./components/TransFail";
+import GTCwithCash from "./components/PAYMENT/GTCwithCash";
 
 function App(props) {
   return (
@@ -11,6 +19,17 @@ function App(props) {
         <Route path="/" element={<AdsPage />} />
         <Route path="/homepage" element={<HomePage />} />
         <Route path="/scanqrcode" element={<QRCode />} />
+        <Route path="/test" element={<Testing />} />
+        <Route path="/detail/:productId" element={<PaymentPage />} />
+        <Route path="/payment-cash" element={<CashPage />} />
+        <Route path="/payment-banking" element={<BankingPage />} />
+        <Route path="/payment-gtc" element={<GTCPage />} />
+        <Route
+          path="/payment-gtc/payment-gtc-with-cash"
+          element={<GTCwithCash />}
+        />
+        <Route path="/trans-completed" element={<TransSuccess />} />
+        <Route path="/trans-failed" element={<TransFail />} />
       </Routes>
     </BrowserRouter>
   );

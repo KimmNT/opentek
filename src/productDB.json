@@ -59,6 +59,12 @@
         "productName": "Moutain Dew",
         "productPrice": 10000,
         "productImage": "https://images.unsplash.com/photo-1585498154575-3db0fda49f1d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      {
+        "productId": 11,
+        "productName": "Chupa Chups",
+        "productPrice": 9500,
+        "productImage": "https://images.unsplash.com/photo-1596793453600-adeef0163df2?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       }
     ]
   }

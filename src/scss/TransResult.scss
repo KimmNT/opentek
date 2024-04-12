@@ -1,0 +1,143 @@
+//COLORES
+$primary: #FF7E36;
+$secondary:#333A73;
+$light:#FFF;
+$dark:#000;
+$softLight:#F6F6F6;
+$teal:#018F8C;
+$success:#3CCF4E;
+
+//VARIABLE
+$boxShadow:-10px 10px 5px rgb(217, 217, 217);
+
+@font-face {
+    font-family: Robo;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: "Robo";
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.transcom__container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    .transcom__content{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10rem;
+        padding-top: 15rem;
+        .transcom__header{
+            font-size: 6rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .transcom__result{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 10rem;
+            .transcom__icon_box{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 30rem;
+                height: 30rem;
+                border-radius: 50%;
+                box-shadow: $boxShadow;
+                .transcom__icon{
+                    font-size: 20rem;
+                    color: $light;
+                }
+                &.success{
+                    background:$success ;
+                }
+                &.error{
+                    background-color: #D04848;
+                }
+            }
+           .confirm__waiting{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                .confirm__waiting_text{
+                    font-size: 3rem;
+                    font-style: italic;
+                    text-align: center;
+                    line-height: 6rem;
+                }
+            }
+            .transcom__btn_box{
+                display: flex;
+                align-items: center;
+                gap: 12rem;
+                .transcom__btn{
+                    padding: 2rem 10rem;
+                    font-size: 4rem;
+                    font-weight: 600;
+                    box-shadow: $boxShadow;
+                    border-radius: 2rem;
+                    &.cancel{
+                        color: $dark;
+                        background: $softLight;
+                    }
+                    &.continue{
+                        color: $light;
+                        background: $primary;
+                    }
+                }
+            }
+        }
+    }
+    .state{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        bottom: 3rem;
+        left: 3rem;
+        .state__item{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: .5rem solid $primary;
+            &.active{
+                background-color: $primary;
+                .state__icon{ 
+                color: $light; 
+                }
+            }
+            .state__icon{
+                font-size: 2rem;
+            }
+        }
+        .stat__line{
+            width: 4rem;
+            height: .3rem;
+            background-color: #000;
+        }
+    }
+    .count__down{
+        position: absolute;
+        bottom: 5rem;
+        right: 5rem;
+        font-size: 3rem;
+        font-style: italic;
+    }
+}

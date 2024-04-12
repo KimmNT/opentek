@@ -1,0 +1,240 @@
+//COLORES
+$primary: #FF7E36;
+$secondary:#333A73;
+$light:#FFF;
+$dark:#000;
+$softLight:#F6F6F6;
+$teal:#018F8C;
+
+//VARIABLE
+$boxShadow:-10px 10px 5px rgb(217, 217, 217);
+
+@font-face {
+    font-family: Robo;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+
+
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: "Robo";
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.method__container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    .method__header{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5rem;
+        .header__back{
+            width: 7rem;
+            height: 7rem;
+            border-radius: 50%;
+            background-color: $primary;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .header__back_icon{
+                font-size: 5rem;
+                color: $light;
+            }
+        }
+        .header__title{
+            font-size: 6rem;
+            font-weight: 900;
+        }
+    }
+    .method__content{
+        max-width: 950px !important;
+        margin: 0 auto;
+        padding: 0 10rem;
+        .method__summary{
+            margin-top: 4rem;
+            .method__summary_content{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: $softLight;
+                padding: 3rem;
+                border-radius: 2rem;
+                box-shadow: $boxShadow;
+                .summary__image{
+                    width: 20%;
+                    height: 25rem;
+                    border-radius: 1rem;
+                }
+                .summary__info{
+                    width: 70%;
+                    height: 23rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .summary__price{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .info__item{
+                            font-size: 3.5rem;
+                            font-weight: 600;
+                        }
+                    }
+                    .summary__line{
+                        width: 100%;
+                        height: .5rem;
+                        background-color: #E2E3E7;
+                    }
+                    .summary__total{
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        .info__total{
+                            font-size: 5.5rem;
+                            font-weight: 600;
+                        }
+                    }
+                }
+            }
+        }
+        .method__transaction{
+            margin-top: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5rem;
+            .gtc__content{
+                width: 100%;
+                background-color: $softLight;
+                box-shadow: $boxShadow;
+                border-radius: 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: .5rem;
+                .gtc__item{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 2rem 0rem;
+                    width: 90%;
+                    .gtc__headline{
+                        font-size: 3rem;
+                    }
+                    .gtc__coin{
+                        display: flex;
+                        align-items: center;
+                        gap: 2rem;
+                        .gtc__coin_icon{
+                            font-size: 4rem;
+                            color: $primary;
+                            font-weight: 900;
+                        }
+                        .gtc__coin_number{
+                            font-size: 4rem;
+                            font-weight: 600;
+                            &.error{
+                                color: #D04848;
+                            }
+                        }
+                    }
+                }
+                .gtc__line{
+                    width: 90%;
+                    height: .2rem;
+                    background-color: #E2E3E7;
+                }
+            }
+            .addcash__done{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 4rem;
+                .addcash__done_headline{
+                    font-size: 3rem;
+                    text-align: center;
+                    color: #D04848;
+                    font-weight: 600;
+                }
+                .addcash__done_btn{
+                    padding: 2rem 10rem;
+                    font-size: 4rem;
+                    color: $light;
+                    background: $primary;
+                    border-radius: 2rem;
+                    box-shadow: $boxShadow;
+                    text-transform: uppercase;
+                }
+            }
+            .addcash__waiting{
+                font-size: 4rem;
+                margin-top: 10rem;
+                font-weight: 600;
+                color: $secondary;
+            }
+        }
+    }
+    .state{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        bottom: 3rem;
+        left: 3rem;
+        .state__item{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: .5rem solid $primary;
+            &.active{
+                background-color: $primary;
+                .state__icon{ 
+                color: $light; 
+                }
+            }
+            .state__icon{
+                font-size: 2rem;
+            }
+        }
+        .stat__line{
+            width: 4rem;
+            height: .3rem;
+            background-color: $dark;
+        }
+    }
+    .method__waiting{
+        position: absolute;
+        bottom: 5rem;
+        right: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        .method__waiting_text{
+            font-size: 2rem;
+            font-style: italic;
+        }
+        .count__down{
+            font-size: 2rem;
+            font-style: italic;
+        }
+    }
+    .currency{
+        color: $primary;
+        font-weight: 600;
+        margin-left: 1rem;
+    }
+}

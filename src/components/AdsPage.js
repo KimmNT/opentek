@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../scss/Ads.scss";
 import VideoPlayer from "./Video";
-import adsVideo from "../images/ads2.mp4";
+import adsVideo from "../images/ad3.mp4";
 
 function AdsPage(props) {
   const navigate = useNavigate();

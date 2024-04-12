@@ -3,10 +3,14 @@ $primary: #FF7E36;
 $secondary:#333A73;
 $light:#FFF;
 
+//VARIABLE
+$boxShadow:-10px 10px 5px rgb(217, 217, 217);
+
 @font-face {
     font-family: Robo;
     src: url(../fonts/Roboto-Regular.ttf);
 }
+
 
 html{
     font-size: 62.5%;
@@ -14,28 +18,101 @@ html{
 body{
     font-family: "Robo";
 }
+
 .home__container{
+    position: relative;
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-    background-color:$primary ;
+    // background-color:$primary ;
     .home__content{
-        max-width: 950px !important;
-        margin: 0 auto;
-        .product__list{
-            .product__item{
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .header__headline{
+                display: flex;
+                align-items: center;
+                gap: 3rem;
+                .headline__box{
+                    width: 1.5rem;
+                    height: 15rem;
+                    background-color: $primary;
+                    border-top-right-radius: 2rem;
+                    border-bottom-right-radius: 2rem;
+                }
+                .headline__text{
+                    font-size: 5rem;   
+                    font-weight: 900;          
+                }
             }
-            .product__name{
-
-            }
-            .product__price{
-
-            }
-            .product__checkout_btn{
-                .checkout__icon{
-                    
+            .header__balance{
+                display: flex;
+                align-items: center;
+                background-color: $light;
+                box-shadow: $boxShadow;
+                gap: 3rem;
+                padding: 2rem 3rem;
+                border-top-left-radius: 2rem;
+                border-bottom-left-radius: 2rem;
+                .balance__icon{
+                    color: $primary;
+                    font-size: 3rem;
+                }
+                .balance__number{
+                    font-size: 4rem;
+                    font-weight: 900;
                 }
             }
         }
+    }
+    .state{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        bottom: 3rem;
+        left: 3rem;
+        .state__item{
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: .5rem solid $primary;
+            &.active{
+                background-color: $primary;
+                .state__icon{ 
+                color: $light; 
+                }
+            }
+            .state__icon{
+                font-size: 2rem;
+            }
+        }
+        .stat__line{
+            width: 4rem;
+            height: .3rem;
+            background-color: #000;
+        }
+    }
+    .currency{
+        color: $primary;
+        font-weight: 600;
+        margin-left: 1rem;
+        text-transform: uppercase;
+    }
+    .logout{
+        position: absolute;
+        bottom: 4rem;
+        right: 5rem;
+        background-color: $primary;
+        padding: 1.5rem 3rem;
+        border-radius: 2rem;
+        box-shadow: $boxShadow;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $light;
     }
 }
