@@ -7,6 +7,7 @@ import {
   FaMoneyBill,
   FaCheck,
   FaExclamation,
+  FaTimes,
 } from "react-icons/fa";
 import "../scss/TransResult.scss";
 
@@ -50,16 +51,16 @@ export default function TransFail() {
         </div>
       </div>
       <div className="state">
-        <div className="state__item active">
+        <div className="state__item done">
           <FaCheck className="state__icon" />
         </div>
-        <div className="stat__line"></div>
-        <div className="state__item active">
+        <div className="state__line"></div>
+        <div className="state__item done">
           <FaCheck className="state__icon" />
         </div>
-        <div className="stat__line"></div>
-        <div className="state__item active">
-          <FaCheck className="state__icon" />
+        <div className="state__line"></div>
+        <div className="state__item error">
+          <FaTimes className="state__icon" />
         </div>
       </div>
       <div className="count__down">Log out in 01:59s</div>

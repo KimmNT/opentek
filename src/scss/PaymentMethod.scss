@@ -271,27 +271,48 @@ img{
         bottom: 3rem;
         left: 3rem;
         .state__item{
-            width: 4rem;
-            height: 4rem;
+            width: 5rem;
+            height: 5rem;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            border: .5rem solid $primary;
+            color: $dark;
+            border: .5rem solid #cbcbcb;
+            .state__icon{
+                font-size: 3rem;
+                color: $dark;
+            }
             &.active{
-                background-color: $primary;
-                .state__icon{ 
+                background-color: $secondary;    
+                border: 1.3rem solid $secondary;
+            .state__icon{
+                font-size: 3rem;
+                color: $light;
+            }
+            }
+            &.done{
+                background-color: $secondary;
                 color: $light; 
+                border: .5rem solid $secondary;
+
+                .state__icon{
+                    font-size: 3rem;
+                    color: $light;
                 }
             }
-            .state__icon{
-                font-size: 2rem;
+            &.error{
+                background: #D04848;
+                .state__icon{
+                    font-size: 3rem;
+                    color: $dark;
+                }
             }
         }
-        .stat__line{
+        .state__line{
             width: 4rem;
             height: .3rem;
-            background-color: $dark;
+            background-color: #000;
         }
     }
     .method__waiting{

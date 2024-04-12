@@ -38,11 +38,11 @@ function HomePage(props) {
         <div className="state__item active">
           <FaBox className="state__icon" />
         </div>
-        <div className="stat__line"></div>
+        <div className="state__line"></div>
         <div className="state__item ">
           <FaMoneyBill className="state__icon" />
         </div>
-        <div className="stat__line"></div>
+        <div className="state__line"></div>
         <div className="state__item ">
           <FaList className="state__icon" />
         </div>

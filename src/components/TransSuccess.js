@@ -39,15 +39,15 @@ export default function TransSuccess() {
         </div>
       </div>
       <div className="state">
-        <div className="state__item active">
+        <div className="state__item done">
           <FaCheck className="state__icon" />
         </div>
-        <div className="stat__line"></div>
-        <div className="state__item active">
+        <div className="state__line"></div>
+        <div className="state__item done">
           <FaCheck className="state__icon" />
         </div>
-        <div className="stat__line"></div>
-        <div className="state__item active">
+        <div className="state__line"></div>
+        <div className="state__item done">
           <FaCheck className="state__icon" />
         </div>
       </div>
