@@ -13,6 +13,8 @@ import TransFail from "./components/TransFail";
 import GTCwithCash from "./components/PAYMENT/GTCwithCash";
 import GetCrypto from "./components/GetCrypto";
 import TestAPI from "./components/TestAPI";
+import Management from "./components/admin/Management";
+import AdminLogin from "./components/admin/AdminLogin";
 
 function App(props) {
   return (
@@ -34,6 +36,8 @@ function App(props) {
         <Route path="/trans-failed" element={<TransFail />} />
         <Route path="/getCrypto" element={<GetCrypto />} />
         <Route path="/testAPI" element={<TestAPI />} />
+        <Route path="/admin-manage-login" element={<AdminLogin />} />
+        <Route path="/admin-management" element={<Management />} />
       </Routes>
     </BrowserRouter>
   );
