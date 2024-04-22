@@ -136,5 +136,8 @@ body{
         text-transform: uppercase;
         font-weight: 600;
         color: $light;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
     }
 }

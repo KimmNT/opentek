@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import "../scss/Product.scss";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Product(props) {
-  const { data, balance } = props;
+  const { data, balance, agencyId, machineId, token } = props;
+  const [toDetail, setToDetail] = useState(false);
+  const [productDetail, setProductDetail] = useState({});
   // Here we use item offsets; we could also use page offsets
   // following the API or data you're working with.
   const [itemOffset, setItemOffset] = useState(0);
@@ -13,9 +15,25 @@ export default function Product(props) {
   const [pageCount, setPageCount] = useState(0);
   const itemsPerPage = 6;
 
-  // Simulate fetching items from another resources.
-  // (This could be items from props; or items loaded in a local state
-  // from an API endpoint with useEffect and useState)
+  const navigate = useNavigate();
+
+  const navigateToPage = (pageUrl, stateData) => {
+    navigate(pageUrl, { state: stateData });
+  };
+
+  useEffect(() => {
+    if (toDetail) {
+      navigateToPage(`/detail/${productDetail.productId}`, {
+        productInfo: productDetail,
+        machineId: machineId,
+        agencyId: agencyId,
+        token: token,
+        balance: balance,
+      });
+    }
+  }, [toDetail]);
+
+  //PAGINATION
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(data.slice(itemOffset, endOffset));
@@ -28,12 +46,25 @@ export default function Product(props) {
     setItemOffset(newOffset);
   };
 
+  const handelFormat = (number) => {
+    return new Intl.NumberFormat().format(number);
+  };
+
+  const handleCreateTransaction = (productDetail) => {
+    setProductDetail(productDetail);
+    setToDetail(true);
+  };
+
   return (
     <>
       <div className="product__container">
         {currentItems.map((item) => {
           return (
-            <div className="product__item" key={item.productId}>
+            <div
+              onClick={() => handleCreateTransaction(item)}
+              className="product__item"
+              key={item.productId}
+            >
               <img
                 className="product__image"
                 src={item.productImage}
@@ -43,22 +74,15 @@ export default function Product(props) {
                 <div className="product__name">{item.productName}</div>
                 <div className="product__buy">
                   <div className="product__price">
-                    {item.productPrice}
+                    {handelFormat(item.productPrice)}
                     <span className="currency">gt</span>
                   </div>
-                  <Link
-                    to={`/detail/${item.productId}`}
-                    state={{
-                      productId: item.productId,
-                      productName: item.productName,
-                      productImage: item.productImage,
-                      productPrice: item.productPrice,
-                      userBalance: balance,
-                    }}
+                  {/* <div
+                    onClick={() => handleCreateTransaction(item)}
                     className="product__buy_btn"
                   >
                     <FaAngleRight className="buy__icon" />
-                  </Link>
+                  </div> */}
                 </div>
               </div>
             </div>

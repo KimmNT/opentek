@@ -75,8 +75,8 @@ img{
                 align-items: center;
                 flex-direction: column;
                 .confirm__waiting_text{
-                    font-size: 3rem;
-                    font-style: italic;
+                    font-size: 4rem;
+                    // font-style: italic;
                     text-align: center;
                     line-height: 6rem;
                 }
@@ -89,15 +89,16 @@ img{
                     padding: 2rem 10rem;
                     font-size: 4rem;
                     font-weight: 600;
-                    box-shadow: $boxShadow;
                     border-radius: 2rem;
+                    text-decoration: none;
+                    text-transform: uppercase;
                     &.cancel{
                         color: $dark;
-                        background: $softLight;
                     }
                     &.continue{
                         color: $light;
                         background: $primary;
+                        box-shadow: $boxShadow;
                     }
                 }
             }
@@ -144,7 +145,7 @@ img{
                 border: .5rem solid #D04848;
                 .state__icon{
                     font-size: 3rem;
-                    color: $dark;
+                    color: $light;
                 }
             }
         }
@@ -160,5 +161,8 @@ img{
         right: 5rem;
         font-size: 3rem;
         font-style: italic;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
     }
 }

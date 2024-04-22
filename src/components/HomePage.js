@@ -1,17 +1,27 @@
 import React from "react";
 import productDB from "../productDB.json";
 import "../scss/Home.scss";
-import { FaBox, FaCoins, FaList, FaMoneyBill } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { FaBox, FaList, FaMoneyBill } from "react-icons/fa";
+import { useNavigate, useLocation } from "react-router-dom";
 import Product from "./Product";
+import CountDown from "./CountDown";
 
 function HomePage(props) {
+  const { state } = useLocation();
+  const balance = state?.balance;
+  const machineId = state?.machineId;
+  const agencyId = state?.agencyId;
+  const token = state?.token;
+
+  const handelFormat = (number) => {
+    return new Intl.NumberFormat().format(number);
+  };
+
   const navigate = useNavigate();
 
   const navigateToPage = (pageUrl) => {
     navigate(pageUrl);
   };
-  const balance = 5000;
 
   return (
     <div className="home__container">
@@ -27,12 +37,18 @@ function HomePage(props) {
           </div>
           <div className="header__balance">
             <div className="balance__number">
-              {balance}
+              {handelFormat(balance)}
               <span className="currency">gt</span>
             </div>
           </div>
         </div>
-        <Product data={productDB.products} balance={balance} />
+        <Product
+          data={productDB.products}
+          balance={balance}
+          machineId={machineId}
+          agencyId={agencyId}
+          token={token}
+        />
       </div>
       <div className="state">
         <div className="state__item active">
@@ -48,7 +64,8 @@ function HomePage(props) {
         </div>
       </div>
       <div onClick={() => navigateToPage("/scanqrcode")} className="logout">
-        Log out (01:59)
+        <div>log out</div>
+        <CountDown pathPage={"/scanqrcode"} />
       </div>
     </div>
   );

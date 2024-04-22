@@ -4,66 +4,77 @@
         "productId": 1,
         "productName": "Cocacola",
         "productPrice": 10000,
+        "productSlot":1,
         "productImage": "https://images.unsplash.com/photo-1554866585-cd94860890b7?q=80&w=1065&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         "productId": 2,
         "productName": "Pepsi",
         "productPrice": 12000,
+        "productSlot":2,
         "productImage": "https://images.unsplash.com/photo-1553456558-aff63285bdd1?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         "productId": 3,
         "productName": "Sprite",
         "productPrice": 9000,
+        "productSlot":3,
         "productImage": "https://images.unsplash.com/photo-1680404005217-a441afdefe83?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         "productId": 4,
         "productName": "Fanta",
         "productPrice": 8500,
+        "productSlot":4,
         "productImage": "https://images.unsplash.com/photo-1632818924360-68d4994cfdb2?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         "productId": 5,
         "productName": "7 UP",
         "productPrice": 11000,
+        "productSlot":5,
         "productImage": "https://images.unsplash.com/photo-1658527693525-ce2270bdd9e3?q=80&w=1315&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         "productId": 6,
         "productName": "Miller Lite",
         "productPrice": 9500,
+        "productSlot":6,
         "productImage": "https://images.unsplash.com/photo-1600111765736-9c59f7afe9e8?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         "productId": 7,
         "productName": "Crush Lemone",
         "productPrice": 8000,
+        "productSlot":7,
         "productImage": "https://images.unsplash.com/photo-1607811121079-c33f75be7781?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         "productId": 8,
         "productName": "Corona Extra",
         "productPrice": 8500,
+        "productSlot":8,
         "productImage": "https://images.unsplash.com/photo-1613904985222-0d534430bdbd?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         "productId": 9,
         "productName": "Chupa Chups",
         "productPrice": 9500,
+        "productSlot":9,
         "productImage": "https://images.unsplash.com/photo-1596793453600-adeef0163df2?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         "productId": 10,
         "productName": "Moutain Dew",
         "productPrice": 10000,
+        "productSlot":10,
         "productImage": "https://images.unsplash.com/photo-1585498154575-3db0fda49f1d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       },
       {
         "productId": 11,
         "productName": "Chupa Chups",
         "productPrice": 9500,
+        "productSlot":11,
         "productImage": "https://images.unsplash.com/photo-1596793453600-adeef0163df2?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       }
     ]

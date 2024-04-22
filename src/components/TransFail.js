@@ -10,6 +10,7 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import "../scss/TransResult.scss";
+import CountDown from "./CountDown";
 
 export default function TransFail() {
   const navigate = useNavigate();
@@ -63,7 +64,9 @@ export default function TransFail() {
           <FaTimes className="state__icon" />
         </div>
       </div>
-      <div className="count__down">Log out in 01:59s</div>
+      <div className="count__down">
+        Log out in <CountDown pathPage={"/scanqrcode"} />
+      </div>
     </div>
   );
 }

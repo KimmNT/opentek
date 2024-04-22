@@ -140,6 +140,7 @@ img{
                 text-transform: uppercase;
                 box-shadow: $boxShadow;
                 margin-top: 5rem;
+                text-decoration: none;
             }
             .method__cash_notice{
                 font-size: 3rem;
@@ -157,7 +158,7 @@ img{
                     width: 50rem;
                     height: 12rem;
                     background-color: $teal;
-                    border-radius: 5rem;
+                    border-radius: 3rem;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -178,21 +179,33 @@ img{
                     }
                 }
             }
-            .method__banking{
-                width: 35rem;
-                height: 35rem;
-                // background-color: $primary;
+            .method__bank{
                 display: flex;
-                justify-content: center;
+                flex-direction: column;
                 align-items: center;
-                border: .5rem solid $primary;
-                border-radius: 2rem;
-                box-shadow: $boxShadow;
-                overflow: hidden;
-                .qr__banking{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                justify-content: center;
+                margin-top: 3rem;
+                gap: 5rem;
+                .method__desc{
+                    font-size: 4rem;
+                    text-align: center;
+                }
+                .method__banking{
+                    width: 35rem;
+                    height: 35rem;
+                    // background-color: $primary;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: .5rem solid $primary;
+                    border-radius: 2rem;
+                    box-shadow: $boxShadow;
+                    overflow: hidden;
+                    .qr__banking{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
             .gtc__content{
@@ -237,6 +250,18 @@ img{
                     height: .2rem;
                     background-color: #E2E3E7;
                 }
+            }
+            .gtc__enough{
+                padding: 2rem 10rem;
+                    background-color: $primary;
+                    font-size: 5rem;
+                    border-radius: 2rem;
+                    box-shadow: $boxShadow;
+                    color: $light;
+                    font-weight: 600;
+                    margin-top: 5rem;
+                    text-transform: uppercase;
+                    text-decoration: none;
             }
             .gtc__notenough{
                 display: flex;
