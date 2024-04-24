@@ -25,3 +25,92 @@ img{
     height: 100%;
     object-fit: cover;
 }
+
+.admin__login_container{
+    background: #FFF;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10rem;
+    .logo{
+        font-size: 5rem;
+        font-weight: 900;
+        .logo_hl{
+            color: $primary;
+        }
+    }
+    .admin__login_content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 85%;
+        height: 50vh;
+        box-shadow: $boxShadow;
+        background: #f5f5f5;
+        padding: 4rem 3rem;
+        border-radius: 4rem;
+        .admin__login_image{
+            width: 50%;
+            height: 100%;
+            background: $primary;
+            border-radius: 3rem;
+            overflow: hidden;
+        }
+        .admin__login_form{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 45%;
+            height: 90%;
+            .admin__login_header{
+                font-size: 5rem;
+                font-weight: 600;
+                .admin__login_header_reminder{
+                    font-size: 2rem;
+                    color: #8b8b8b;
+                    font-style: italic;
+                }
+            }
+            .admin__login_entering{
+                display: flex;
+                    gap: 5rem;
+                    flex-direction: column;
+                    width: 100%;
+                .admin__login_input{
+                    display: flex;
+                    gap: 2rem;
+                    flex-direction: column;
+                    width: 80%;
+                    .input__title{
+                        font-size: 3rem;
+                    }
+                    input{
+                        width: 100%;
+                        padding: 3rem 2rem;
+                        outline: none;
+                        background: none;
+                        border: none;
+                        border-bottom: .2rem solid $dark;
+                        font-size: 3rem;
+                        font-weight: 600;
+                    }
+                }
+            }
+            .admin__login_btn{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $primary;
+                padding: 2rem;
+                width: 80%;
+                font-size: 3rem;
+                border-radius: 2rem;
+                font-weight: 900;
+                color: $light;
+            }
+        }
+    }
+}

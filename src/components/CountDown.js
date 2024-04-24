@@ -13,7 +13,7 @@ const CountDown = ({ pathPage, data }) => {
     navigate(pageUrl, { state: stateData });
   };
 
-  const [timeLeft, setTimeLeft] = useState(30); //seconds
+  const [timeLeft, setTimeLeft] = useState(300); //seconds
   const [timeUp, setTimeUp] = useState(false);
 
   const getCurrentTime = () => {

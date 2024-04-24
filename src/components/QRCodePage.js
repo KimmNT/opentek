@@ -120,7 +120,10 @@ function QRCode(props) {
           Scan to login
         </p>
       </div>
-      <div onClick={() => alert("Admin opened")} className="qr__admin">
+      <div
+        onClick={() => navigateToPage("/admin-manage-login")}
+        className="qr__admin"
+      >
         <FaPen className="admin__icon" />
       </div>
       <div onClick={() => navigateToPage("/")} className="countdown">

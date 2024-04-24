@@ -1,17 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import productDB from "../productDB.json";
 import "../scss/Home.scss";
 import { FaBox, FaList, FaMoneyBill } from "react-icons/fa";
 import { useNavigate, useLocation } from "react-router-dom";
 import Product from "./Product";
 import CountDown from "./CountDown";
+import axios from "axios";
 
 function HomePage(props) {
+  const [products, setProducts] = useState([]);
+
   const { state } = useLocation();
   const balance = state?.balance;
   const machineId = state?.machineId;
   const agencyId = state?.agencyId;
   const token = state?.token;
+
+  const DBurl = "http://localhost:5000";
+
+  const getProductsByMachine = async () => {
+    try {
+      const res = await axios.get(`${DBurl}/getProductByMachine`, {
+        params: {
+          // machineId: "VHI8727260",
+          machineId: "VHI8727123",
+        },
+      });
+      setProducts(res.data);
+    } catch (err) {
+      console.error("Error fetching data:", err);
+    }
+  };
+
+  useEffect(() => {
+    getProductsByMachine();
+  }, []);
 
   const handelFormat = (number) => {
     return new Intl.NumberFormat().format(number);
@@ -43,7 +66,7 @@ function HomePage(props) {
           </div>
         </div>
         <Product
-          data={productDB.products}
+          data={products}
           balance={balance}
           machineId={machineId}
           agencyId={agencyId}

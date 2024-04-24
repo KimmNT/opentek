@@ -71,7 +71,9 @@ export default function Product(props) {
                 alt={item.productName}
               />
               <div className="product__info">
-                <div className="product__name">{item.productName}</div>
+                <div className="product__name">
+                  {item.productName.substring(0, 20)}...
+                </div>
                 <div className="product__buy">
                   <div className="product__price">
                     {handelFormat(item.productPrice)}
