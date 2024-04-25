@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "../../scss/AdminLogin.scss";
 import { useNavigate } from "react-router-dom";
 import LoginThumb from "../../images/loginThumb.jpg";
+import CountDown from "../CountDown";
 
 export default function AdminLogin() {
   ///LOGIN
@@ -86,6 +87,10 @@ export default function AdminLogin() {
             Login
           </div>
         </div>
+      </div>
+      <div onClick={() => navigateToPage("/scanqrcode")} className="logout">
+        <div>log out</div>
+        <CountDown pathPage={"/scanqrcode"} />
       </div>
     </div>
   );
