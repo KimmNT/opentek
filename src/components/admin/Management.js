@@ -2,7 +2,19 @@ import React, { useEffect, useState } from "react";
 import "../../scss/AdminManage.scss";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { FaPenAlt, FaTimes } from "react-icons/fa";
+import { FaGripHorizontal, FaPenAlt, FaTimes } from "react-icons/fa";
+
+//FOR EACH SLOT
+function Slot({ productSlot, onClick, isActive }) {
+  return (
+    <button
+      className={isActive ? "slot__value clicked" : "slot__value unclick"}
+      onClick={() => onClick(productSlot)}
+    >
+      {productSlot}
+    </button>
+  );
+}
 
 export default function Management() {
   const navigate = useNavigate();
@@ -10,6 +22,11 @@ export default function Management() {
   const navigateToPage = (pageUrl, stateData) => {
     navigate(pageUrl, { state: stateData });
   };
+
+  //OPEN BOXES
+  const [isOpenBox, setIsOpenBox] = useState(false);
+  const [userPIN, setUserPIN] = useState();
+  const [isPIN, setIsPIN] = useState("");
 
   //INSERT FUNCTION
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -156,7 +173,7 @@ export default function Management() {
       };
 
       await axios.put(
-        `http://localhost:5000/updateData/${productInfo.productId}`,
+        `${DBurl}/updateProductById/${productInfo.productId}`,
         editedData
       );
       console.log("Data updated successfully");
@@ -177,15 +194,26 @@ export default function Management() {
   //DELETE PRODUCT
   const handleDeleteProduct = async (id) => {
     try {
-      await axios.put(`${DBurl}/deleteData`, {
-        id: id,
-      });
+      await axios.delete(`${DBurl}/deleteProductById/${id}`);
       console.log("Data deleted successfully");
     } catch (err) {
       console.error("Error deleting data:", err);
     }
     getProductsByMachine();
     setDeleteAlert(false);
+  };
+
+  //OPEN BOX BY SLOT
+  const handleOpenBox = () => {
+    if (userPIN == userInfo.userPIN) {
+      console.log(`OPEN BOX: ${slot}`);
+      setIsOpenBox(false);
+      setUserPIN();
+      setIsPIN("");
+    } else {
+      setIsPIN("Incorrect PIN. Please try again!");
+      setUserPIN();
+    }
   };
 
   return (
@@ -230,6 +258,15 @@ export default function Management() {
                   </div>
                   <div className="item__controller">
                     <div
+                      className="controller open"
+                      onClick={() => {
+                        setIsOpenBox(true);
+                        setSlot(product.productSlot);
+                      }}
+                    >
+                      <div className="controller__icon open">open box</div>
+                    </div>
+                    <div
                       className="controller edit"
                       onClick={() => {
                         setIsOpenEdit(true);
@@ -257,6 +294,14 @@ export default function Management() {
       <div className="logout" onClick={() => navigateToPage("/scanqrcode")}>
         log out
       </div>
+      <div
+        className="boxes__control"
+        onClick={() =>
+          navigateToPage("/admin-manage-boxes", { userInfo: userInfo })
+        }
+      >
+        <FaGripHorizontal className="boxes__control_icon" />
+      </div>
       {isOpenModal ? (
         <div className="modal">
           <div className="modal__content">
@@ -278,8 +323,10 @@ export default function Management() {
                   <div className="field__lable">Price</div>
                   <input
                     placeholder="Product's price"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
+                    value={handelFormat(price)}
+                    onChange={(e) =>
+                      setPrice(Number(e.target.value.replace(/\D/g, "")))
+                    }
                   />
                 </div>
                 <div className="modal__input_field">
@@ -298,13 +345,12 @@ export default function Management() {
                 <div className="field__lable">Slot</div>
                 <div className="modal__input_slots">
                   {remainingSlots.map((item, index) => (
-                    <div
+                    <Slot
                       key={index}
-                      className="slot__value"
+                      productSlot={item.productSlot}
                       onClick={() => setSlot(item)}
-                    >
-                      {item.productSlot}
-                    </div>
+                      isActive={slot.productSlot === item.productSlot}
+                    />
                   ))}
                 </div>
               </div>
@@ -347,9 +393,11 @@ export default function Management() {
                 <div className="modal__input_field">
                   <div className="field__lable">Price</div>
                   <input
-                    placeholder={productInfo.productPrice}
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
+                    placeholder="Product's price"
+                    value={handelFormat(price)}
+                    onChange={(e) =>
+                      setPrice(Number(e.target.value.replace(/\D/g, "")))
+                    }
                   />
                 </div>
                 <div className="modal__input_field">
@@ -370,16 +418,12 @@ export default function Management() {
                 </div>
                 <div className="modal__input_slots">
                   {remainingSlots.map((item, index) => (
-                    <div
+                    <Slot
                       key={index}
-                      className="slot__value"
-                      onClick={() => {
-                        setSlot(item);
-                        console.log(item);
-                      }}
-                    >
-                      {item.productSlot}
-                    </div>
+                      productSlot={item.productSlot}
+                      onClick={() => setSlot(item)}
+                      isActive={slot.productSlot === item.productSlot}
+                    />
                   ))}
                 </div>
               </div>
@@ -417,6 +461,42 @@ export default function Management() {
                   className="delete__btn confirm"
                   onClick={() => handleDeleteProduct(productInfo.productId)}
                 >
+                  OK
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <></>
+      )}
+      {isOpenBox ? (
+        <div className="modal">
+          <div className="modal__content">
+            <div className="open__container">
+              <div className="open__header">
+                Please enter PIN to open box {slot} <br />
+                <span className="open__header_recommend">
+                  Your 6 digits number
+                </span>
+              </div>
+              <div className="open__pin">
+                <input
+                  type="password"
+                  placeholder="enter your PIN"
+                  value={userPIN}
+                  onChange={(e) => setUserPIN(e.target.value)}
+                />
+                <div className="open__pin_status">{isPIN}</div>
+              </div>
+              <div className="open__controller">
+                <div
+                  className="open__btn cancel"
+                  onClick={() => setIsOpenBox(false)}
+                >
+                  Cancel
+                </div>
+                <div className="open__btn confirm" onClick={handleOpenBox}>
                   OK
                 </div>
               </div>

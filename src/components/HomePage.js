@@ -23,7 +23,8 @@ function HomePage(props) {
       const res = await axios.get(`${DBurl}/getProductByMachine`, {
         params: {
           // machineId: "VHI8727260",
-          machineId: "VHI8727123",
+          // machineId: "VHI8727123",
+          machineId: "AAaa123456",
         },
       });
       setProducts(res.data);

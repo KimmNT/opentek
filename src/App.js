@@ -15,11 +15,13 @@ import GetCrypto from "./components/GetCrypto";
 import TestAPI from "./components/TestAPI";
 import Management from "./components/admin/Management";
 import AdminLogin from "./components/admin/AdminLogin";
+import BoxesControl from "./components/admin/BoxesControl";
 
 function App(props) {
   return (
     <BrowserRouter>
       <Routes>
+        {/* USER */}
         <Route path="/" element={<AdsPage />} />
         <Route path="/homepage" element={<HomePage />} />
         <Route path="/scanqrcode" element={<QRCode />} />
@@ -36,8 +38,10 @@ function App(props) {
         <Route path="/trans-failed" element={<TransFail />} />
         <Route path="/getCrypto" element={<GetCrypto />} />
         <Route path="/testAPI" element={<TestAPI />} />
+        {/* ADMIN */}
         <Route path="/admin-manage-login" element={<AdminLogin />} />
         <Route path="/admin-management" element={<Management />} />
+        <Route path="/admin-manage-boxes" element={<BoxesControl />} />
       </Routes>
     </BrowserRouter>
   );

@@ -50,18 +50,19 @@ body{
     }
     .qr__admin{
         position: absolute;
-        bottom: 10rem;
+        bottom: 1rem;
         left: 5rem;
-        width: 6rem;
+        width: 10rem;
         height: 6rem;
-        border-radius: 50%;
-        background-color: $light;
+        border-radius: 2rem;
+        background-color: $primary;
         display: flex;
         justify-content: center;
         align-items: center;
         border: .5rem solid $primary;
         .admin__icon{
             font-size: 2.5rem;
+            color: $primary;
         }
     }
     .countdown{
