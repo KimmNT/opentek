@@ -46,7 +46,7 @@ export default function BoxesControl() {
   const handleOpenBox = () => {
     if (userPIN == userInfo.userPIN) {
       console.log(`OPEN BOX: ${slot}`);
-      setIsOpenAll(false);
+      setIsOpenBox(false);
       setUserPIN(0);
       setIsPIN("");
     } else {

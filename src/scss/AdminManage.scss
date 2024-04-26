@@ -68,9 +68,22 @@ img{
                     font-weight: 600;
                     color: $light;
                 }
-                .headline_count{
-                    font-size: 2.5rem;
-                    font-weight: 600;
+                .admin__manage_deives{
+                    display: flex;
+                    align-items: flex-end;
+                    gap: 2rem;
+                    .headline_count{
+                        font-size: 2.5rem;
+                        font-weight: 600;
+                    }
+                    .headline__search{
+                        font-size: 3rem;
+                        border: none;
+                        border-bottom: .2rem solid $dark;
+                        background-color: transparent;
+                        padding: 1rem 2rem;
+                        outline: none;
+                    }
                 }
             }
         }

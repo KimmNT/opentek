@@ -2,7 +2,13 @@ import React, { useEffect, useState } from "react";
 import "../../scss/AdminManage.scss";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { FaGripHorizontal, FaPenAlt, FaTimes } from "react-icons/fa";
+import {
+  FaGlasses,
+  FaGripHorizontal,
+  FaPenAlt,
+  FaSistrix,
+  FaTimes,
+} from "react-icons/fa";
 
 //FOR EACH SLOT
 function Slot({ productSlot, onClick, isActive }) {
@@ -233,10 +239,15 @@ export default function Management() {
             >
               add new item
             </div>
-            <div>
+            <div className="admin__manage_deives">
               <div className="headline_count">
                 Total: {products.length} items
               </div>
+              {/* <input
+                type="text"
+                placeholder="name"
+                className="headline__search"
+              /> */}
             </div>
           </div>
         </div>
