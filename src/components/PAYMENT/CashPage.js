@@ -24,7 +24,7 @@ export default function CashPage() {
   const token = state?.token;
   const balance = state?.balance;
 
-  const topUp = 9000;
+  const topUp = 300000;
 
   const getCurrentTime = () => {
     let currentDateTime = new Date();
